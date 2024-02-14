@@ -1,26 +1,28 @@
 <!DOCTYPE html>
 <html>
+<meta charset="UTF-8">
 <head>
     <title>Любимой Дине</title>
     <style>
+
         .heart {
             position: relative;
-            width: 600px; /* Увеличено в 2 раза */
-            height: 540px; /* Увеличено в 2 раза */
+            width: 600px; 
+            height: 540px; 
             margin-top: -300px;
         }
         .heart::before,
         .heart::after {
             content: "";
             position: absolute;
-            top: 240px; /* Увеличено в 2 раза */
-            width: 300px; /* Увеличено в 2 раза */
-            height: 480px; /* Увеличено в 2 раза */
-            border-radius: 300px 300px 0 0; /* Увеличено в 2 раза */
+            top: 240px; 
+            width: 300px; 
+            height: 480px; 
+            border-radius: 300px 300px 0 0;
             background: #BD4996;
         }
         .heart::before {
-            left: 300px; /* Увеличено в 2 раза */
+            left: 300px;
             transform: rotate(-45deg);
             transform-origin: 0 100%;
         }
@@ -31,15 +33,15 @@
         }
         .heart {
 	animation-name: 'anime';
-		/* имя кейфрейма для анимации */
+
 	animation-duration: 600ms;
-		/* длительность анимации */
+
 	animation-iteration-count: infinite;
-		/* количество повторений, в данном случае - бесконечно */
+
 	animation-direction: alternate;
-		/* проигрывать анимацию в прямом и в обратном порядке */
+
 	animation-timing-function: ease-in;
-		/* вычисление временных промежутков для анимации, в данном случае анимация ускоряется */
+
 }
 @keyframes 'anime' {
 	from {
@@ -106,13 +108,47 @@
             font-size: 24px;
             color: black;
         }
+    button {
+  outline: none;
+  border: 0;
+  background: transparent;
+}
+@keyframes example {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
 
+#animated-text {
+  opacity: 1;
+  animation-name: example;
+  animation-duration: 4s;
+  position: absolute;
+  top: 50%;
+  left: 1%;
+  transform: translateY(-50%);
+  font-family: 'Bradley Hand', cursive, black;
+  font-size: 24px;
+  color: black;
+}
     </style>
 </head>
+
+<p id="animated-text" style="display: none;">Это моя валентинка тебе Дина<br>Люблю тебя!Эт тебе &#128157<br>это часть подарка жди воскресенья
+
+
+
+</p>
+
 <body>
-    <div class="heart"></div>
+<button class="heart", onclick="showText()"></button>
 <div class="rectangle">Валентинка моей любимой и самой лучшей девочке, Дине</div>
 <h1><div class="rec"></div></h1>
 <h2><div class="rec"></div></h2>
+<script>
+function showText() {
+  var text = document.getElementById("animated-text");
+  text.style.display = "block";
+}
+</script>
 </body>
 </html>
