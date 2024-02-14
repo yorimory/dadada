@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Любимой Дине</title>
+    <style>
+        .heart {
+            position: relative;
+            width: 600px; /* Увеличено в 2 раза */
+            height: 540px; /* Увеличено в 2 раза */
+            margin-top: -300px;
+        }
+        .heart::before,
+        .heart::after {
+            content: "";
+            position: absolute;
+            top: 240px; /* Увеличено в 2 раза */
+            width: 300px; /* Увеличено в 2 раза */
+            height: 480px; /* Увеличено в 2 раза */
+            border-radius: 300px 300px 0 0; /* Увеличено в 2 раза */
+            background: #BD4996;
+        }
+        .heart::before {
+            left: 300px; /* Увеличено в 2 раза */
+            transform: rotate(-45deg);
+            transform-origin: 0 100%;
+        }
+        .heart::after {
+            left: 0;
+            transform: rotate(45deg);
+            transform-origin: 100% 100%;
+        }
+        .heart {
+	animation-name: 'anime';
+		/* имя кейфрейма для анимации */
+	animation-duration: 600ms;
+		/* длительность анимации */
+	animation-iteration-count: infinite;
+		/* количество повторений, в данном случае - бесконечно */
+	animation-direction: alternate;
+		/* проигрывать анимацию в прямом и в обратном порядке */
+	animation-timing-function: ease-in;
+		/* вычисление временных промежутков для анимации, в данном случае анимация ускоряется */
+}
+@keyframes 'anime' {
+	from {
+		transform: scale(1) rotate(45deg);
+	}
+	to {
+		transform: scale(1.1) rotate(45deg);
+	}
+}
+.heart {
+	-webkit-animation-name: 'anime';
+	-webkit-animation-duration: 600ms;
+	-webkit-animation-iteration-count: infinite;
+	-webkit-animation-direction: alternate;
+	-webkit-animation-timing-function: ease-in;
+}
+@-webkit-keyframes 'anime' {
+	from {
+		-webkit-transform: scale(1);
+	}
+	to {
+		-webkit-transform: scale(1.1);
+	}
+}
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 96vh;
+            background-color: #F8C8DC;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .rectangle {
+            position: absolute;
+            top: 1%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 1910px;
+            height: 100px;
+            box-shadow: 10px 5px 5px gray;
+            background-color: #FF99CC;
+            border: 5px solid #FF6666;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Bradley Hand', cursive, black;
+            font-size: 24px;
+            color: black;
+        }
+            .rec {
+            position: absolute;
+            top: 2%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 1912px;
+            height: 9px;
+            background-color: #DC143C;
+            display: flex;
+            box-shadow: 3px 2px 1px rgb(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+            font-family: 'Bradley Hand', cursive, black;
+            font-size: 24px;
+            color: black;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="heart"></div>
+<div class="rectangle">Валентинка моей любимой и самой лучшей девочке, Дине</div>
+<h1><div class="rec"></div></h1>
+<h2><div class="rec"></div></h2>
+</body>
+</html>
